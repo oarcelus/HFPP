@@ -1,4 +1,5 @@
 module param 
+
   implicit none
 
   character(len=50), save, public                :: atomname
@@ -672,55 +673,55 @@ module param
     allocate(usph(nsite))
     allocate(jsph(nsite))
 
-!    u_mat = cmplx_0
-!    do isite = 1, nsite
-!       do iorb = 1, norb
-!          do iorb1 = 1, norb
-!             u_mat(iorb,iorb,iorb1,iorb1,isite) = 2.9 !usph(isite)
-!          end do
-!       end do
-!    end do
-!
-!    do isite = 1, nsite
-!       do iorb = 1, norb
-!          do iorb1 = 1, norb
-!             if (iorb /= iorb1) then
-!                u_mat(iorb,iorb1,iorb1,iorb,isite) = 0.9 !jsph(isite)
-!             end if
-!          end do
-!       end do
-!    end do
+    u_mat = cmplx_0
+    do isite = 1, nsite
+       do iorb = 1, norb
+          do iorb1 = 1, norb
+             u_mat(iorb,iorb,iorb1,iorb1,isite) = 2.9 !usph(isite)
+          end do
+      end do
+    end do
 
-  u_mat = cmplx_0
-  u_mat(1,1,1,1,1) = 0.707
-  u_mat(1,1,2,2,1) = 0.509
-  u_mat(1,1,3,3,1) = 0.509
-  u_mat(2,2,1,1,1) = 0.509
-  u_mat(2,2,2,2,1) = 0.676
-  u_mat(2,2,3,3,1) = 0.505
-  u_mat(3,3,1,1,1) = 0.509
-  u_mat(3,3,2,2,1) = 0.505
-  u_mat(3,3,3,3,1) = 0.676
+    do isite = 1, nsite
+       do iorb = 1, norb
+          do iorb1 = 1, norb
+             if (iorb /= iorb1) then
+                u_mat(iorb,iorb1,iorb1,iorb,isite) = 0.9 !jsph(isite)
+             end if
+          end do
+       end do
+    end do
 
-  u_mat(1,1,1,1,1) = 0.707
-  u_mat(1,2,2,1,1) = 0.086
-  u_mat(1,3,3,1,1) = 0.086
-  u_mat(2,1,1,2,1) = 0.086
-  u_mat(2,2,2,2,1) = 0.676
-  u_mat(2,3,3,2,1) = 0.086
-  u_mat(3,1,1,3,1) = 0.086
-  u_mat(3,2,2,3,1) = 0.086
-  u_mat(3,3,3,3,1) = 0.676
+!  u_mat = cmplx_0
+!  u_mat(1,1,1,1,1) = 0.707
+!  u_mat(1,1,2,2,1) = 0.509
+!  u_mat(1,1,3,3,1) = 0.509
+!  u_mat(2,2,1,1,1) = 0.509
+!  u_mat(2,2,2,2,1) = 0.676
+!  u_mat(2,2,3,3,1) = 0.505
+!  u_mat(3,3,1,1,1) = 0.509
+!  u_mat(3,3,2,2,1) = 0.505
+!  u_mat(3,3,3,3,1) = 0.676
 
-  u_mat(1,1,1,1,1) = 0.707
-  u_mat(1,2,1,2,1) = 0.086
-  u_mat(1,3,1,3,1) = 0.086
-  u_mat(2,1,2,1,1) = 0.086
-  u_mat(2,2,2,2,1) = 0.676
-  u_mat(2,3,2,3,1) = 0.086
-  u_mat(3,1,3,1,1) = 0.086
-  u_mat(3,2,3,2,1) = 0.086
-  u_mat(3,3,3,3,1) = 0.676
+!  u_mat(1,1,1,1,1) = 0.707
+!  u_mat(1,2,2,1,1) = 0.086
+!  u_mat(1,3,3,1,1) = 0.086
+!  u_mat(2,1,1,2,1) = 0.086
+!  u_mat(2,2,2,2,1) = 0.676
+!  u_mat(2,3,3,2,1) = 0.086
+!  u_mat(3,1,1,3,1) = 0.086
+!  u_mat(3,2,2,3,1) = 0.086
+!  u_mat(3,3,3,3,1) = 0.676
+
+!  u_mat(1,1,1,1,1) = 0.707
+!  u_mat(1,2,1,2,1) = 0.086
+!  u_mat(1,3,1,3,1) = 0.086
+!  u_mat(2,1,2,1,1) = 0.086
+!  u_mat(2,2,2,2,1) = 0.676
+!  u_mat(2,3,2,3,1) = 0.086
+!  u_mat(3,1,3,1,1) = 0.086
+!  u_mat(3,2,3,2,1) = 0.086
+!  u_mat(3,3,3,3,1) = 0.676
 
 
   end subroutine spherical_param

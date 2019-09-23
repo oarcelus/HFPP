@@ -1,0 +1,15 @@
+!Input for the Green Functions
+100
+1000
+2.0
+300.0
+24
+.false.
+.false.
+!Input for SCLR
+.true.
+.true.
+.false.
+.true.
+r
+90.0 90.0
